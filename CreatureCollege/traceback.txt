@@ -1,61 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing the color property of anonymous style:
-  File "game/script.rpy", line 27, in script
-    m "It’ll be okay, Mom!"
-Exception: Color string u'#212F3C' must be 3, 4, 6, or 8 hex digits long.
+While running game code:
+  File "game/script.rpy", line 127, in script
+    menu:
+KeyError: u'name'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 27, in script
-    m "It’ll be okay, Mom!"
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\ast.py", line 643, in execute
-    renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
+  File "game/script.rpy", line 127, in script
+    menu:
+  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\ast.py", line 1501, in execute
+    renpy.exports.say(None, "\n".join(narration), interact=False)
   File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\exports.py", line 1175, in say
     who(what, *args, **kwargs)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\character.py", line 1013, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\character.py", line 817, in do_display
-    **display_args)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\character.py", line 566, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\ui.py", line 287, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 2620, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 2925, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\screen.py", line 405, in visit_all
-    self.child.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 511, in visit_all
-    d.visit_all(callback)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 513, in visit_all
-    callback(self)
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\display\core.py", line 2925, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\text\text.py", line 1497, in per_interact
-    if self.style.slow_abortable:
-  File "gen/styleclass.pxi", line 733, in renpy.styledata.styleclass.Style.slow_abortable.__get__
-  File "style.pyx", line 486, in renpy.style.StyleCore._get
-  File "style.pyx", line 702, in renpy.style.build_style
-  File "style.pyx", line 699, in renpy.style.build_style
-  File "gen/style_functions.pyx", line 744, in style_functions.color_property
-  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\color.py", line 156, in __new__
-    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
-Exception: Color string u'#212F3C' must be 3, 4, 6, or 8 hex digits long.
+  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\character.py", line 1000, in __call__
+    what = what_pattern.replace("[what]", sub(what, translate=translate))
+  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\character.py", line 982, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\fluff\Downloads\renpy-6.99.14-sdk\renpy\substitutions.py", line 242, in substitute
+    s = formatter.vformat(s, (), kwargs)
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
+KeyError: u'name'
 
 Windows-8-6.2.9200
 Ren'Py 6.99.14.3135
