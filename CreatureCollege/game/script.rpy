@@ -5,7 +5,7 @@
 
 define u = Character(_("..."), color="#5F6A6A")
 define mo = Character(_("Mom"), color="#212F3C")
-define m = Character(_("Me"), color="##212F3C")
+define m = Character(_("Me"), color="#212F3C")
 
 image bg foggyfield = "foggyfield.jpg"
 image bg foggyforest = "foggyforest.jpg"
